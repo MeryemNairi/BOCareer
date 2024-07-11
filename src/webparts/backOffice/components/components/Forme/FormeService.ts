@@ -41,7 +41,10 @@ export const getFormData = async (): Promise<IFormData[]> => {
       fileUrl: item.fileUrl,
       fileName: item.fileName,
       category: item.category ,
-      link: item.link 
+      link: item.link ,
+      fontStyle: '', 
+      fontWeight: '', 
+      fontColor: '', 
 
     }));
   } catch (error) {

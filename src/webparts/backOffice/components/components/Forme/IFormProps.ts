@@ -14,5 +14,8 @@ export interface IFormData {
   fileUrl?: string;
   category: string;
   link: string;
-
+  fontStyle: string;
+  fontWeight: string;
+  fontColor: string;
 }
+
