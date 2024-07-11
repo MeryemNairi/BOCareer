@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IFormProps, IFormData } from './IFormProps';
-import { submitForm, getFormData, updateFormEntry, deleteFormEntry,deleteFormDataBeforeToday  } from './FormeService';import styles from './Forme.module.scss';
+import { submitForm, getFormData, updateFormEntry, deleteFormEntry, deleteFormDataBeforeToday } from './FormeService'; import styles from './Forme.module.scss';
 import Navbar from '../../Header/navbar';
 import Footer from '../Footer/footer';
 import * as Modal from 'react-modal';
@@ -16,9 +16,7 @@ export const Forme: React.FC<IFormProps> = ({ context }) => {
     file: null,
     fileName: '',
     category: '',
-    link: '',  fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontColor: '#000000',
+    link: '',
 
 
   });
@@ -39,14 +37,14 @@ export const Forme: React.FC<IFormProps> = ({ context }) => {
 
     try {
 
-      await deleteFormDataBeforeToday(); 
+      await deleteFormDataBeforeToday();
       const formData = await getFormData();
 
       const modifiedFormData = formData.map(entry => ({
 
         ...entry,
 
-        fileName: entry.fileUrl ? entry.fileUrl.substring(entry.fileUrl.lastIndexOf('/') ) : ''
+        fileName: entry.fileUrl ? entry.fileUrl.substring(entry.fileUrl.lastIndexOf('/')) : ''
 
       }));
 
@@ -130,10 +128,7 @@ export const Forme: React.FC<IFormProps> = ({ context }) => {
         file: null,
         fileName: '',
         category: '',
-        link: '',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontColor: '#000000',
+        link: ''
 
       });
       alert('Form submitted successfully!');
@@ -201,7 +196,7 @@ export const Forme: React.FC<IFormProps> = ({ context }) => {
                     value={formData.link}
                     onChange={handleInputChange}
                     placeholder="Enter a link"
-                    style={{ backgroundColor: '#F5F9FF', height: '20px', width: '685px' }}              
+                    style={{ backgroundColor: '#F5F9FF', height: '20px', width: '685px' }}
                   />
                 </div>
 
